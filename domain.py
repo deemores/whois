@@ -6,9 +6,9 @@ import whois
 import logging
 
 # Konfiguration
-TLD = ".com"
-MIN_LENGTH = 4
-MAX_LENGTH = 4
+TLD = ".be"
+MIN_LENGTH = 2
+MAX_LENGTH = 3
 RESULT_FILE = "c:\\whois\\whoisresult.txt"
 MUST_INCLUDE_SEQUENCE = ""  # Beliebige Zeichenfolge, die im Domainnamen enthalten sein muss
 WAIT_SECONDS = 3
@@ -52,7 +52,7 @@ def check_domain(url, log_file):
     wait_seconds = WAIT_SECONDS
     while retries < MAX_RETRIES:
         try:
-            logging.info(f"Checking {url} ...")
+            #logging.info(f"Checking {url} ...")
             res = whois.whois(url)
             if res.status is not None:
                 logging.info(f"{url} exists!")
